@@ -1,17 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About, NavBar, Products } from './components/index';
+import { Menu } from '../components/index';
+import { Home, About, Posts } from '../pages/index';
 
 const App = () => {
     return (
         <>
-        <NavBar />
+        <Menu />
         <div>
+            <Route exact path="/" component={Home} />
             <Switch>
-                <Route exact path="/" component={Home} />
+                <Route path="/about/:name" component={About}/>
                 <Route path="/about" component={About} />
-                <Route path="/products" render={(props) => <Products sortBy="newest" />} />
             </Switch>
+            <Route path="/posts" component={Posts}/>
         </div>
         </>
     );
