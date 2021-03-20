@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: -webkit-flex;
+            display: flex;
+            width: 90%;
+            height: 50px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+
+        .wrap div:nth-child(2n-1) {
+            background-color: pink;
+        }
+
+        .wrap div:nth-child(2n) {
+            background-color: plum;
+        }
+
+        .flex-direction-row {
+            flex-direction: row;
+        }
+
+        .flex-direction-row div {
+            width: 100%;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex-wrap div {
+            width: 100%;
+        }
+
+        .flex-flow {
+            flex-flow: row wrap-reverse;
+        }
+
+        .flex-flow div {
+            width: 100%;
+        }
+
+        .fs {
+            justify-content: flex-start;
+        }
+
+        .fe {
+            justify-content: flex-end;
+        }
+
+        .c {
+            justify-content: center;
+        }
+
+        .sb {
+            justify-content: space-between;
+        }
+
+        .sa {
+            justify-content: space-around;
+        }
+
+        .justify-content div {
+            width: 20%;
+        }
+
+        .ai-fs {
+            align-items: flex-start;
+        }
+
+        .ai-fe {
+            align-items: flex-end;
+        }
+
+        .ai-c {
+            align-items: center;
+        }
+
+        .ai-b {
+            align-items: baseline;
+        }
+
+        .align-items div {
+            width: 20%;
+        }
+
+        .align-items div:nth-child(2n) {
+            height: 50%;
+        }
+
+        .align-items div:nth-child(2n-1) {
+            height: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    display: flex;
+    <div class="wrap"></div>
+    <br />
+    <!-- 박스 왼쪽에서 오른쪽으로 배치 flex-direction: row; -->
+    <!-- 박스 위에서 아래로 배치 flex-direction: col; -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    display: flex; flex-direction: row;
+    <div class="wrap flex-direction-row">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    <!-- 박스 여러줄 배치 flex-wrap: wrap; -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    display: flex; flex-direction: row; flex: wrap;
+    <div class="wrap flex-direction-row flex-wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    <!-- flex-direction + flex-wrap = flex-flow -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    display: flex; flex-flow: row wrap-reverse;
+    <div class="wrap flex-flow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- justify-content: flex-start -->
+    <div class="wrap justify-content fs">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- justify-content: flex-end -->
+    <div class="wrap justify-content fe">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- justify-content: center -->
+    <div class="wrap justify-content c">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- justify-content: space-between -->
+    <div class="wrap justify-content sb">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- justify-content: space-around -->
+    <div class="wrap justify-content sa">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- align-items: flex-start -->
+    <div class="wrap align-items ai-fs">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- align-items: flex-end -->
+    <div class="wrap align-items ai-fe">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- align-items: center -->
+    <div class="wrap align-items ai-c">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- align-items: baseline -->
+    <div class="wrap align-items ai-b">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+
+</html>
