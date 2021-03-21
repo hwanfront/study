@@ -1,0 +1,16 @@
+.wrap {
+    display: -webkit-flex;
+    display: flex;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+.wrap div:nth-child(2n-1) {
+    background-color: pink;
+}
+
+.wrap div:nth-child(2n) {
+    background-color: plum;
+}

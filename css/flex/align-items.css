@@ -1,0 +1,27 @@
+.ai-fs {
+    align-items: flex-start;
+}
+
+.ai-fe {
+    align-items: flex-end;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.ai-b {
+    align-items: baseline;
+}
+
+.align-items div {
+    width: 20%;
+}
+
+.align-items div:nth-child(2n) {
+    height: 50%;
+}
+
+.align-items div:nth-child(2n-1) {
+    height: 90%;
+}

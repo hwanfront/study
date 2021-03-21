@@ -1,0 +1,7 @@
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-row div {
+    width: 100%;
+}
