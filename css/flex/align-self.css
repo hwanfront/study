@@ -1,0 +1,28 @@
+.as-fs {
+    align-self: flex-start;
+}
+
+.as-fe {
+    align-self: flex-end;
+}
+
+.as-c {
+    align-self: center;
+}
+
+.as-b {
+    align-self: baseline;
+}
+
+.align-self div {
+    width: 20%;
+}
+
+.align-self div:nth-child(2n-1) {
+    height: 50%;
+}
+
+.align-self div:nth-child(2n) {
+    height: 90%;
+}
+
