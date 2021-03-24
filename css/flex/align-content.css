@@ -1,0 +1,39 @@
+.ac-fs {
+    align-content: flex-start;
+}
+
+.ac-fe {
+    align-content: flex-end;
+}
+
+.ac-c {
+    align-content: center;
+}
+
+.ac-sb {
+    align-content: space-between;
+}
+
+.ac-sa {
+    align-content: space-around;
+}
+
+.ac-fs div, .ac-fe div, .ac-c div, .ac-sb div, .ac-sa div{
+    height: 20%;
+}
+
+.ac-sa div:first-child {
+    order: 2;
+}
+
+.ac-sa div:nth-child(2) {
+    order: 4;
+}
+
+.ac-sa div:nth-child(3) {
+    order: 1;
+}
+
+.ac-sa div:nth-child(4) {
+    order: 3;
+}
