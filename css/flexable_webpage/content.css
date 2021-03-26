@@ -1,0 +1,37 @@
+.latest_post_section {
+    order: 5;
+    width: 30%;
+    height: 400px;
+    background: #99aaee;
+}
+
+.popular_post_section {
+    order: 6;
+    width: 30%;
+    background: #dd6611;
+}
+
+.banner_section {
+    display: flex;
+    order: 7;
+    flex-flow: column nowrap;
+    width: 22.91666666666666666667%;
+}
+
+.banner_section div {
+    flex: 1 1 0;
+}
+
+.banner_section div:first-child {
+    background-color: #0077bb;
+}
+
+.banner_section div:last-child {
+    background-color: #1166cc;
+}
+
+.social_section {
+    order: 8;
+    width: 17.083333333333333333%;
+    background-color: #ff66dd;
+}

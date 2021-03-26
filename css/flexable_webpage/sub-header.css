@@ -1,0 +1,18 @@
+.slider_section {
+    order: 2;
+    width: 50%;
+    height: 250px;
+    background-color: #3399bb;
+}
+
+.gallery_section {
+    order: 3;
+    width: 27.08333333333333333333%;
+    background-color: #ffdd77;
+}
+
+.rankup_section {
+    order: 4;
+    width: 22.9166666666666666666%;
+    background: #00ddaa;
+}
