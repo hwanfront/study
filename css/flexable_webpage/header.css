@@ -6,13 +6,29 @@
     width: 100%;
 }
 
-.header .logo {
+.logo {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: 0;
     left: 0;
     width: 12.5%;
     height: 140px;
-    background-color: #ff6655;
+    background-color: #ffffff;
+    color: rgba(88, 191, 225, 0.93);
+}
+
+
+.logo h1 {
+    font-size: 2.5rem;
+}
+
+.logo div:first-child {
+    font-family: NanumSquareEB;
+    
+}
+.logo div:last-child {
+    font-family: NanumSquareR;
 }
 
 .header nav {
