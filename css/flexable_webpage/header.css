@@ -14,13 +14,13 @@
     left: 0;
     width: 12.5%;
     height: 140px;
-    background-color: #ffffff;
+    background-color: #eeeeee;
     color: rgba(88, 191, 225, 0.93);
 }
 
 
 .logo h1 {
-    font-size: 2.5rem;
+    font-size: 2.5vw;
 }
 
 .logo div:first-child {
