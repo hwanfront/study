@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title>background</title>
+  <style>
+    div {
+      background-repeat: no-repeat;
+      background-image: url(./gopher.png);
+      background-position: center;
+      width: 400px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <p>image size : 5000x5000, div size : 400px 300px</p>
+  <div style="background-size: auto;">auto</div>
+  <div style="background-size: 200px 250px;">200px 250px</div>
+  <div style="background-size: 50% 50%;">50% 50%</div>
+  <div style="background-size: 100% 100%;">100% 100%</div>
+  <div style="background-size: contain;">contain</div>
+  <div style="background-size: cover;">cover</div>
+</body>
+</html>
