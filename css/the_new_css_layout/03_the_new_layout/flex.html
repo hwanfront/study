@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <link href="../css/common.css" rel="stylesheet">
+  <style>
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+    .cards {
+      display: flex;
+      margin: 0 -10px;
+      padding: 0;
+      list-style: none;
+    }
+    .flex-items li {
+      flex: 1 1 200px;
+    }
+    .flex-auto li {
+      flex: 0 0 auto;
+    }
+    .cards li {
+      width: calc(calc(33.333333333% - 20px));
+      background-color: #ffe0f5;
+      border: 1px solid #fbdbeb;
+      margin: 0 10px 20px 10px;
+      padding: 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>display flex</h1>
+    <ul class="cards">
+      <li>
+        <h2>카드 1</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      </li>
+      <li>
+        <h2>카드 3</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 4</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 5</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+    </ul>
+    <h1>display flex with flex wrap</h1>
+    <ul class="cards flex-wrap">
+      <li>
+        <h2>카드 1</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      </li>
+      <li>
+        <h2>카드 3</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 4</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 5</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+    </ul>
+    <h1>display flex with flex wrap, flex in li tags</h1>
+    <ul class="cards flex-items flex-wrap">
+      <li>
+        <h2>카드 1</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      </li>
+      <li>
+        <h2>카드 3</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 4</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 5</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+    </ul>
+    <h1>display flex with flex wrap, flex auto in li tags</h1>
+    <ul class="cards flex-auto flex-wrap">
+      <li>
+        <h2>카드 1</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      </li>
+      <li>
+        <h2>카드 3</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 4</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li>
+        <h2>카드 5</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

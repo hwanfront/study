@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float</title>
+  <link href="../css/common.css" rel="stylesheet">
+  <style>
+    .image {
+      margin-right: 20px;
+      margin-bottom: 10px;
+      width: 150px; 
+      height: 150px;
+    }
+    .float-left {
+      float:left;
+    }
+    .cards {
+      margin: 0 -10px;
+      padding: 0;
+      list-style: none;
+    }
+    .cards li {
+      float: left;
+      width: calc(33.33333333% - 20px);
+      background-color: #ffe0f5;
+      border: 1px solid #fbdbeb;
+      margin: 0 10px 20px 10px;
+      padding: 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>float</h1>
+    <img src="../img/skyblue.png" alt="skyblue" class="image float-left">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias accusantium reprehenderit iusto eligendi saepe libero at unde assumenda natus. Distinctio quibusdam similique sunt possimus temporibus neque voluptatem asperiores in autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias accusantium reprehenderit iusto eligendi saepe libero at unde assumenda natus. Distinctio quibusdam similique sunt possimus temporibus neque voluptatem asperiores in autem.</p>
+  </div>
+  <div class="container">
+    <h1>two floating elements</h1>
+    <ul class="cards">
+      <li>
+        <h2>카드 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus blanditiis facere hic autem aspernatur. Voluptas, error totam obcaecati magni quam vel fuga dolor perferendis amet, dolorum aut! Debitis, dolor nostrum.</p>
+      </li>
+      <li>
+        <h2>카드 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus blanditiis facere hic autem aspernatur. Voluptas, error totam obcaecati magni quam vel fuga dolor perferendis amet, dolorum aut! Debitis, dolor nostrum.</p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-item</title>
+  <link href="../css/common.css" rel="stylesheet">
+  <style>
+    .cards {
+      margin: 0 -10px;
+      padding: 0;
+      display: flex;
+      height: 50vh;
+      padding: 0;
+      list-style: none;
+      border: 1px solid red;
+    }
+    .cards li {
+      background-color: #ffe0f5;
+      border: 1px solid #fbdbeb;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>flex</h1>
+    <ul class="cards">
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+    <h1>flex item 배치</h1>
+    <ul class="cards">
+      <li style="align-self: stretch;">stretch</li>
+      <li style="align-self: flex-start;">flex-start</li>
+      <li style="align-self: flex-end;">flex-end</li>
+      <li style="align-self: center;">center</li>
+      <li style="align-self: baseline;">baseline</li>
+    </ul>
+    <h1>flex item 배치 with flex-direction: column</h1>
+    <ul class="cards" style="flex-direction: column;">
+      <li style="align-self: stretch;">stretch</li>
+      <li style="align-self: flex-start;">flex-start</li>
+      <li style="align-self: flex-end;">flex-end</li>
+      <li style="align-self: center;">center</li>
+      <li style="align-self: baseline;">baseline</li>
+    </ul>
+    <h1>with justify-content</h1>
+    <h3>flex-start</h3>
+    <ul class="cards" style="justify-content: flex-start; height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+    </ul>
+    <h3>flex-end</h3>
+    <ul class="cards" style="justify-content: flex-end; height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+    </ul>
+    <h3>center</h3>
+    <ul class="cards" style="justify-content: center; height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+    </ul>
+    <h3>space-around</h3>
+    <ul class="cards" style="justify-content: space-around; height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+    </ul>
+    <h3>space-between</h3>
+    <ul class="cards" style="justify-content: space-between; height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+    </ul>
+    <h3>space-evenly</h3>
+    <ul class="cards" style="justify-content: space-evenly; height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+    </ul>
+    <h1>auto margin</h1>
+    <ul class="cards" style="height: 50px">
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px; align-self: stretch;">item</li>
+      <li style="margin: 0 10px 0 auto; align-self: stretch;">item</li>
+    </ul>
+  </div>
+</body>
+</html> 

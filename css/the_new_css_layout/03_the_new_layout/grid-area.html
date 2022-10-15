@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid-area</title>
+  <link href="../css/common.css" rel="stylesheet">
+  <style>
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+      grid-template-areas: 
+        "a a b"
+        "c d d"
+        "c e e"
+      ;
+      list-style: none;
+    }
+    .cards li {
+      background-color: #ffe0f5;
+      border: 1px solid #fbdbeb;
+      padding: 10px;
+      border-radius: 3px;
+    }
+    .card1 {
+      grid-area: a;
+    }
+    .card2 {
+      grid-area: b;
+    }
+    .card3 {
+      grid-area: c;
+    }
+    .card4 {
+      grid-area: d;
+    }
+    .card5 {
+      grid-area: e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>grid area</h1>
+    <ul class="cards">
+      <li class="card1">
+        <h2>카드 1</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li class="card2">
+        <h2>카드 2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      </li>
+      <li class="card3">
+        <h2>카드 3</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li class="card4">
+        <h2>카드 4</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+      <li class="card5">
+        <h2>카드 5</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

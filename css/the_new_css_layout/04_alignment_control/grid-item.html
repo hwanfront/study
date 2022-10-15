@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid-item</title>
+  <link href="../css/common.css" rel="stylesheet">
+  <style>
+    .spread-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 15%);
+      grid-template-rows: repeat(3, 80px);
+      grid-template-areas: 
+        "a a a b"
+        "a a a c"
+        "d d e e"
+      ;
+      grid-gap: 16px;
+      height: 50vh; 
+      padding: 0;
+      list-style: none;
+      align-content: space-between; 
+      justify-content: space-between;
+      border: 1px solid red;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 80px);
+      grid-template-areas: 
+        "a a a b"
+        "a a a c"
+        "d d e e"
+      ;
+      grid-gap: 16px;
+      padding: 0;
+      list-style: none;
+      border: 1px solid red;
+    }
+    .cards li, .spread-cards li {
+      background-color: #ffe0f5;
+      border: 1px solid #fbdbeb;
+      padding: 10px;
+      border-radius: 3px;
+    }
+    .card1 {
+      grid-area: a;
+    }
+    .card2 {
+      grid-area: b;
+    }
+    .card3 {
+      grid-area: c;
+    }
+    .card4 {
+      grid-area: d;
+    }
+    .card5 {
+      grid-area: e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>grid</h1>
+    <ul class="cards">
+      <li class="card1">카드 1</li>
+      <li class="card2">카드 2</li>
+      <li class="card3">카드 3</li>
+      <li class="card4">카드 4</li>
+      <li class="card5">카드 5</li>
+    </ul>
+    <h1>grid item</h1>
+    <ul class="cards">
+      <li class="card1" style="align-self: start">align-self: start;</li>
+      <li class="card2" style="align-self: end;">align-self: end;</li>
+      <li class="card3" style="align-self: stretch;">align-self: stretch;</li>
+      <li class="card4" style="align-self: start;">align-self: start;</li>
+      <li class="card5" style="align-self: center;">align-self: center;</li>
+    </ul>
+    <h1>grid item align</h1>
+    <ul class="cards" style="justify-items: start;">
+      <li class="card1">justify-self: start;</li>
+      <li class="card2" style="justify-self: stretch;">justify-self: stretch;</li>
+      <li class="card3"  style="justify-self: end;">justify-self: end;</li>
+      <li class="card4" style="justify-self: end;">justify-self: end;</li>
+      <li class="card5" style="justify-self: center;">justify-self: center;</li>
+    </ul>
+    <h1>grid with align-content, justify-content</h1>
+    <ul class="spread-cards" >
+      <li class="card1">카드 1</li>
+      <li class="card2">카드 2</li>
+      <li class="card3">카드 3</li>
+      <li class="card4">카드 4</li>
+      <li class="card5">카드 5</li>
+    </ul>
+  </div>
+</body>
+</html>
