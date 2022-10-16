@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>order</title>
+  <link href="../css/common.css" rel="stylesheet">
+  <style>
+    .cards {
+      grid-gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      padding: 0;
+      list-style: none;
+      border: 1px solid red;
+    }
+    .cards div {
+      background-color: #ffe0f5;
+      border: 1px solid #fbdbeb;
+      padding: 10px;
+      border-radius: 3px;
+    }
+    .cards ul {
+      padding: 0;
+      list-style: none;
+      display: contents;
+    }
+    .cards li {
+      background-color: #fec0e5;
+      border: 1px solid #eec0e5;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    h2, h3, p {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="responsive" class="container">
+    <h1>grid</h1>
+    <ul class="cards" style="display: grid;">
+      <div><h2>카드 1</h2></div>
+      <div><h2>카드 2</h2></div>
+      <div><h2>카드 3</h2></div>
+      <ul>
+        <li><h3>카드 4</h3></li>
+        <li><h3>카드 5</h3></li>
+        <li><h3>카드 6</h3></li>
+      </ul>
+    </ul>
+  </div>
+</body>
+</html>
