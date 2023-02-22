@@ -26,3 +26,34 @@ const relationship = {
 }
 relationship.logFriends();
 ```
+## 비구조화(구조분해)할당
+- this는 함수를 호출할 때 어떻게 호출되었느냐에 따라 결정
+- this가 있는 경우 구조분해할당을 하지 않는 게 좋다
+  - 
+```js
+var c = {
+  s: {
+    n: 'n',
+    co: 1,
+  }
+  getC: function () {
+    this.s.co--; // this를 사용하고 있는 경우에는
+    return this.s.co;
+  }
+}
+var getC = c.getC; // 문제 발생
+var co = c.s.co;
+```
+```js
+const c = {
+  s: {
+    n: 'n',
+    co: 1,
+  },
+  getC() {
+    this.s.co--;
+    return this.s.co;
+  }
+}
+const { getC, status: { co } } = c;
+```

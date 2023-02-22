@@ -1,5 +1,5 @@
 ## 서버로 요청 보내는 코드
-- 라이브러리 없이는 XMLHttpRequest 객체 이용
+- 초기에 라이브러리 없이는 XMLHttpRequest 객체 이용
 ## axios
 - ajax 요청 시 사용하는 라이브러리
 ```html
@@ -40,7 +40,7 @@ axios.get(주소)
   }
 })
 ```
-### FormData
+## FormData
 - axios는 이미지나 파일 전송할 때 FormData 에 넣어서 보냄
 
 ### encodeURIComponent, decodeURIComponent

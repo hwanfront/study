@@ -2,9 +2,9 @@
 - 내용이 실행은 되었지만 결과를 아직 반환하지 않은 객체
 - `then` 결과를 반환함
 - 실행이 완료되지 않았으면 완료된 후에 `then` 내부 함수 실행
-- resolve(성공return 값) => then 으로 연결
-- reject(실패return 값) => catch 로 연결
-- finally 무조건 실행
+  - resolve(성공return 값) => then 으로 연결
+  - reject(실패return 값) => catch 로 연결
+  - finally 무조건 실행
 ```js
 const promise = new Promise((resolve, reject) => {
   if (condition) {
@@ -37,6 +37,7 @@ Promise.all([promise1, promise2])
   })
 ```
 ## async/await
+- **async 함수는 항상 promise 반환한다**
 - promise then 예시
 ```js
 function findAndSaveUser(Users) {
@@ -66,7 +67,6 @@ async function findAndSaveUser(Users) {
   }
 }
 ```
-- async 함수는 항상 promise 반환
 ```js
 async function a() {
   const result = await ...;

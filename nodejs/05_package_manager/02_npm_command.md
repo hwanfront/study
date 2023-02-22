@@ -1,0 +1,13 @@
+# 기타 명령어
+- npm outdated: 패키지에 기능 변화가 생겼는지 알 수 있음
+- npm uninstall: 언인스톨
+- npm search `package`: 패키지 검색
+- npm info `package`: 패키지 세부 정보
+- npm adduser: npm 로그인을 위한 명령어
+- npm whoami: 현재 사용자가 누구인지 알 수 있음
+- npm logout: 로그아웃
+- npm version: package.json 버전을 올림
+- npm deprecate: 패키지 설치할 때 경고 메시지를 띄우게 함 (오류가 있는 패키지에 사용)
+- npm publish: 자신의 패키지 배포
+- npm unpublish: 자신의 패키지 배포 중단 (72시간 내에만 가능)
+- (https://docs.npmjs.com)[docs.npmjs]

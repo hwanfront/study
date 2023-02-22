@@ -1,18 +1,23 @@
-## module
-- ./obj.js
+# REPL
+- Read Evaluate Print Loop
+- 터미널에서 실행, 보통은 js 파일을 만들어서 실행함
+```bash
+$ node
+$ node 파일명.js
+```
+# module
 ```js
+// obj.js
 const a = 'a';
 const b = 'b';
 module.exports = { a, b }
-```
-- ./arr.js
-```js
+
+// arr.js
 const a = 'a';
 const b = 'b';
 module.exports = [a, b];
-```
-- ./a.js
-```js
+
+// a.js
 const { a, b } = require('./obj');
 const obj = require('./obj');
 const arr = require('./arr');
@@ -22,7 +27,7 @@ console.log(obj) // => { a: 'a', b: 'b' }
 console.log(arr) // => ['a', 'b']
 ```
 ## es2015 모듈
-- `require` 와 `import`, `module.export` 와 `export` 는 같은 게 아님
+- `require` 와 `import`, `module.export` 와 `export` 는 같지 않음
 ```js
 import { a, b } from './obj';
 import arr from './arr';

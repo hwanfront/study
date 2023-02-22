@@ -1,7 +1,12 @@
 ## 스코프
-- `var`는 함수 스코프
-- `let`과 `const` 는 블록 스코프
+- `var`는 함수 스코프를 존중한다.
+- `let`과 `const` 는 블록 스코프를 존중한다.
 ```js
+if (true) {
+  const x = 3;
+}
+console.log(x); // error
+
 function a() {
   var x = 1;
 }
@@ -24,3 +29,33 @@ const [a,,b] = arr;
 console.log(a) // => 1
 console.log(b) // => 3
 ``` 
+## 템플릿 문자열
+```js
+var name = '홍길동'
+const result = `이름: ${name}`
+
+function a() {}
+a();
+a``;
+```
+## 객체 리터럴
+```js
+var foo = function () {}
+var b = 'b';
+
+var obj = {
+  a: function () {},
+  foo: foo,
+}
+obj[b + 6] = 'bbb';
+```
+```js
+var foo = function () {}
+var b = 'b';
+
+const obj = {
+  a() {},
+  foo,
+  [b + 3]: 'bbb',
+}
+```
