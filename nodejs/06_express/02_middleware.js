@@ -1,14 +1,17 @@
 const cookieParser = require('cookie-parser');
 const express = require('express');
+const morgan = require('morgan');
 const path = require('path');
-const url = require('url');
-const qs = require('querystring');
 
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
 
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, '/public')));
 app.use(cookieParser('abcdefghpassword'));
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   const name = req.cookies['name'];
@@ -19,8 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-  const { query } = url.parse(req.url);
-  const { name } = qs.parse(query);
+  const { name } = req.body;
   const expires = new Date();
 
   expires.setMinutes(expires.getMinutes() + 5);

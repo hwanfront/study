@@ -30,7 +30,7 @@ app.use('/about', (req, res, next) => { // about에서만 실행 가능
 
 // 라우터
 app.get('/', (req, res) => { // router
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'test.html'));
 })
 
 // 404에러 처리

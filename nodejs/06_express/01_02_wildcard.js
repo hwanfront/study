@@ -8,7 +8,7 @@ app.set('port', process.env.PORT || 3000);
 
 // 라우터, 범위가 넓은 와일드카드 등은 아래로 가도록 작성
 app.get('/', (req, res) => { // router
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'test.html'));
 })
 
 app.get('/category', (req, res) => {

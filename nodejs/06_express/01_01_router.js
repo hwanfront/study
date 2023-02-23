@@ -8,11 +8,11 @@ app.set('port', process.env.PORT || 3000);
 
 // 라우터
 app.get('/', (req, res) => { // router
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'test.html'));
 })
 
 app.post('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'test.html'));
 })
 
 app.get('/about', (req, res) => {

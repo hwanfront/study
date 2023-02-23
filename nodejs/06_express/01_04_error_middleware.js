@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 
 // 라우터
 app.get('/', (req, res) => { // router
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'test.html'));
 })
 
 // 에러 미들웨어

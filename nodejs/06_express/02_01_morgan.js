@@ -9,7 +9,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(morgan('dev'));
 
 app.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.sendFile(path.join(__dirname, './test.html'));
 })
 
 app.get('/category', (req, res) => {
