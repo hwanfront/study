@@ -1,0 +1,21 @@
+[
+  {
+    "customer": "A",
+    "performances": [
+      {
+        "playId": "aaa",
+        "audience": 55
+      },
+      {
+
+        "playId": "bbb",
+        "audience": 35
+      },
+      {
+
+        "playId": "ccc",
+        "audience": 40
+      }
+    ]
+  }
+]
