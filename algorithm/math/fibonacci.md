@@ -2,6 +2,13 @@
 - f(0) = 0
 - f(1) = 1
 - f(n) = f(n-1) + f(n-2)
+```js
+const fibo = (n) => {
+  if(n === 0) return 0
+  if(2 < n) return fibo(n - 1) + fibo(n);
+  return 1;
+}
+```
 ## 피사노 주기
 - 피보나치 수를 어떤 수 K로 나누었을 때, 나눈 나머지는 항상 주기를 가지게 됨.
 ### 특징
