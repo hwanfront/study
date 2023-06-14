@@ -67,6 +67,19 @@ const LIS = (n, dp) => {
   return dp[n];
 }
 ```
+```js
+const LIS = (n, dp) => {
+  for(let i = 0; i < n; i++) {
+    dp[i] = 1;
+
+    for(let j = 0; j < i; j++) {
+      if(seq[j] < seq[i] && dp[i] < dp[j] + 1) {
+        dp[i] = dp[j] + 1;
+      }
+    }
+  }
+}
+```
 - 최장 감소하는 부분 수열 LDS
 ```js
 const LDS = (n, dp) => { 
@@ -80,5 +93,18 @@ const LDS = (n, dp) => {
     }
   }
   return dp[n];
+}
+```
+```js
+const LDS = (n, dp) => {
+  for(let i = n - 1; i >= 0; i--) {
+    dp[i] = 1;
+
+    for(let j = n - 1; j > i; j--) {
+      if(numbers[j] < numbers[i] && dp[i] < dp[j] + 1) {
+        dp[i] = dp[j] + 1;
+      }
+    }
+  }
 }
 ```
