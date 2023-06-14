@@ -2,7 +2,7 @@
 // const fs = require("fs");
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
 const input = `10
-1 2 1`
+1 5 2 1 4 3 4 5 2 1`
 const [N, A] = input.split('\n');
 console.log(solution(Number(N), A.split(' ').map(Number)));
 
