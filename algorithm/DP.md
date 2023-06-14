@@ -21,7 +21,7 @@ const fibo = (n) => {
   return dp[n]
 }
 ```
-### knapsack 배낭 채우기
+## knapsack 배낭 채우기
 - 무게 한도가 정해진 배낭에 짐을 싣는 경우 짐의 가격 최대 값 찾기
 - 모든 경우의 수를 넣는다면(BruteForce) O(2**n)의 시간복잡도를 가짐
 - 가치가 가장 높은 보석부터 먼저 넣어도(Greedy) 최적의 답을 보장받지 못함
@@ -43,5 +43,42 @@ for(let i = 1; i < n + 1; i++) {
     }
     dp[i][j] = Math.max(dp[i - 1][j], v + dp[i - 1][j - w]);
   }
+}
+```
+## 최장 증가 부분 수열 LIS
+- Longest Incresing Subsequence
+- 원소가 n개인 배열에서 각 원소가 이전 원소보다 큰 조건을 만족하는 부분수열 중 길이가 가장 긴 수열
+### 점화식
+- 0 <= j < i
+- dp[i] = max(dp[i], dp[j] + 1) if arr[j] < arr[i]
+### 코드
+- 최장 증가하는 부분 수열 LIS
+```js
+const LIS = (n, dp) => { 
+  if(dp[n] === null) {
+    dp[n] = 1;
+
+    for(let i = n - 1; i >= 0; i--) {
+      if(numbers[i] < numbers[n]) {
+        dp[n] = Math.max(dp[n], LIS(i, dp) + 1);
+      }
+    }
+  }
+  return dp[n];
+}
+```
+- 최장 감소하는 부분 수열 LDS
+```js
+const LDS = (n, dp) => { 
+  if(dp[n] === null) {
+    dp[n] = 1;
+
+    for(let i = n + 1; i < dp.length; i++) {
+      if(numbers[i] < numbers[n]) {
+        dp[n] = Math.max(dp[n], LDS(i, dp) + 1);
+      }
+    }
+  }
+  return dp[n];
 }
 ```
