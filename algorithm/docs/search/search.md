@@ -13,3 +13,24 @@ const findIdx = (target) => {
   }
 }
 ```
+## 이진 탐색
+- 중간지점을 기준으로 데이터를 반씩 나눠서 탐색하는 알고리즘
+- 정렬된 데이터에서 사용
+- 시간복잡도: O(log2n)
+```js
+arr.sort((a, b) => a - b);
+const binarySearch = (arr, target) => {
+  let start = 0;
+  let end = arr.length - 1;
+  while (arr[mid]) {
+    const mid = Math.floor((start + end) / 2);
+    if(arr[mid] === target) return mid;
+    if(arr[mid] > target) {
+      end = mid - 1;
+      continue;
+    }
+    start = mid + 1;
+  }
+  return -1;
+}
+```
