@@ -45,9 +45,10 @@ for(let i = 1; i < n + 1; i++) {
   }
 }
 ```
-## 최장 증가 부분 수열 LIS
-- Longest Incresing Subsequence
-- 원소가 n개인 배열에서 각 원소가 이전 원소보다 큰 조건을 만족하는 부분수열 중 길이가 가장 긴 수열
+## LIS LDS
+- Longest Incresing Subsequence 최장 증가 부분 수열
+- Longest Decreasing Subsequence 최장 감소 부분 수열
+- 원소가 n개인 배열에서 각 원소가 이전 원소보다 큰(작은) 조건을 만족하는 부분수열 중 길이가 가장 긴 수열
 ### 점화식
 - 0 <= j < i
 - dp[i] = max(dp[i], dp[j] + 1) if arr[j] < arr[i]
