@@ -1,3 +1,8 @@
+/**
+ * 1. LIS의 길이와 그 부분수열을 구하는 문제
+ * 2. LIS의 길이를 구하는 코드에서 응용해 부분수열을 구함
+ */
+
 // https://www.acmicpc.net/problem/14002
 // const fs = require("fs");
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
