@@ -1,3 +1,6 @@
+/**
+ * js만 그런건지는 모르겠지만 범위를 지정하지 않으면 메모리 초과 뜨니까 주의
+ */
 // https://www.acmicpc.net/problem/12851
 // const fs = require("fs");
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
