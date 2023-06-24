@@ -3,7 +3,7 @@
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
 const input = `81`;
 const n = +input;
-console.log(solution(n));
+console.log(solution2(n));
 
 function solution2 (n) {
   const draw = (n) => {
