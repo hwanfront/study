@@ -1,3 +1,4 @@
+// * 그래프에서 사이클 존재 여부 확인
 // https://www.acmicpc.net/problem/9466
 // const fs = require("fs");
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
