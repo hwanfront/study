@@ -4,6 +4,10 @@ class PriorityQueue {
     this.compare = compare;
   }
 
+  size() {
+    return this.heap.length;
+  }
+
   empty() {
     return this.heap.length === 0;
   }
