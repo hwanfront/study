@@ -5,8 +5,10 @@
  * # 조건
  * 1. 정점 A가 루트 노드가 아니라면 
  *  => 정점 A에서 자식 노드들이 정점 A를 거치지 않고 정점 A보다 방문번호가 빠른 정점으로 갈 수 없다면 단절점이다.
+ *  => low >= discovered[start]
  * 2. 정점 A가 루트 노드라면
  *  => 자식 노드 수가 2개 이상이면 단절점이다.
+ *  => childCnt > 1
  */
 // https://www.acmicpc.net/problem/11266
 // const fs = require("fs");
