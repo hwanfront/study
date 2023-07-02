@@ -93,40 +93,11 @@ Limits 파일 개수나 파일 사이즈 제한
   - array, fields는 여러 개의 파일 업로드
   - array는 *하나의 요청* body 이름 아래 *여러 파일* 있는 경우
   - fields는 *여러 개 요청* body 이름 아래 *파일이 하나씩* 있는 경우
-```html
-<!-- ./public/02_08_multipart.html -->
-<form id="single" action="/upload" method="post" enctype="multipart/form-data">
-  <input type="file" name="image" />
-  <input type="text" name="title" />
-  <button type="submit">업로드</button>
-</form>
-
-<form id="array" action="/uploads/array" method="post" enctype="multipart/form-data">
-  <input type="file" name="images" multiple />
-  <button type="submit">업로드</button>
-</form>
-
-<form id="fields" action="/uploads/fields" method="post" enctype="multipart/form-data">
-  <input type="file" name="image1" />
-  <input type="file" name="image2" />
-  <button type="submit">업로드</button>
-</form>
-```
-```js
-// ./02_08_multer.js
-app.post('/upload', upload.single('image'), (req, res) => {
-  console.log(req.file);
-  console.log(req.body.title);
-  res.send('ok');
-})
-
-app.post('/uploads/array', upload.array('images'), (req, res) => {
-  console.log(req.files);
-  res.send('ok');
-})
-
-app.post('/uploads/fields', upload.fields([{name: 'image1'}, {name: 'image2'}]), (req, res) => {
-  console.log(req.files);
-  res.send('ok');
-})
-```
+- [./public/02_08_multipart.html](./public/02_08_multipart.html)
+- [./02_08_multer.js](./02_08_multer.js)
+## dotenv
+- 비밀키 또는 환경변수, 설정 등 값들을 관리하기 위한 패키지
+- 보통 `.env` 파일을 만들어 따로 관리함
+- ignore 파일에 추가하진 않았는데 원래는 추가하여 git과 같은 저장소에 올리지도 않음
+- 사람마다 가져야 할 권한들을 나누어 관리할 수 있어야 함
+- [./02_09_dotenv.js](./02_09_dotenv.js)
