@@ -1,3 +1,8 @@
+/**
+ * B의 최댓값이 1000억 인데 
+ * Number.MAX_SAFE_INTEGER 범위 내에 포함해도 결과값이 정확하지 않음을 보여줌
+ * 흠......
+ */
 // https://www.acmicpc.net/problem/10830
 // const fs = require("fs");
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
