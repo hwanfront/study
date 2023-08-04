@@ -20,7 +20,7 @@ function solution (N, c, M, b) {
     for(let i = 0; i < N; i++) {
       for(let j = b.length - 1; j >= 0; j--) {
         if(c[i] >= b[j]) {
-          b = b.slice(0, j).concat(b.slice(j + 1))
+          b.splice(j, 1)
           break;
         }
       }
