@@ -11,3 +11,17 @@ postgreSQL, MSSQL, Oracle, MariaDB, SQLite 등 각각 다른 문법을 가지고
 - 테이블 간 `join` 관계가 `FROM` 에서 명시되기 떄문에 `WHERE` 문에서 조건만 확인하면 되므로 가독성이 좋습니다.
 ### cheat sheet
 - [cheat sheet](https://cheatography.com/tag/database/)
+## 추가
+- 4~6정규화
+- 역정규화 하는 케이스
+- foreign key 사용하는 경우
+- foreign key 제약조건
+- sql query create select insert delete
+- sql query min avg max sum 등
+- 자료형 int float 등
+- explain 사용법
+- 서브쿼리 잘 쓰기
+- transaction lock 종류와 성능, 기능 특징 등
+- stored procedure 성능 문제 등
+- no sql
+- replication, sharding
