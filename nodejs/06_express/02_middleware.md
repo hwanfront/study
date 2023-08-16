@@ -99,5 +99,101 @@ Limits 파일 개수나 파일 사이즈 제한
 - 비밀키 또는 환경변수, 설정 등 값들을 관리하기 위한 패키지
 - 보통 `.env` 파일을 만들어 따로 관리함
 - ignore 파일에 추가하진 않았는데 원래는 추가하여 git과 같은 저장소에 올리지도 않음
-- 사람마다 가져야 할 권한들을 나누어 관리할 수 있어야 함
+- 사람마다 가져야 할 권한들을 나누어 사용할 수 있도록 다르게 나누어 주고 관리하자
 - [./02_09_dotenv.js](./02_09_dotenv.js)
+## Router
+router의 개수가 많아진다면 `app.js`파일이 상당히 길어질 수 있으므로 분리하기 위해 사용합니다.
+```js
+// test.js
+const express = require('express');
+const router = express.Router();
+
+// GET => /test/a
+router.get('/a', (req, res) => {
+  res.send('hello a');
+});
+
+module.exports = router;
+```
+```js
+// app.js 
+const express = require('express');
+const testRouter = require('./test.js');
+const app = express();
+
+app.set('port', process.env.PORT || 3000);
+app.use('/test', testRouter);
+
+// GET => /b
+app.get('/b', (req, res) => {
+  res.send('hello b');
+});
+
+app.listen(app.get('port'), () => {
+  console.log('3000 서버 실행')
+})
+```
+## route 매개변수와 query string
+- 동적으로 변하는 부분을 route 매개변수로 사용하며 `req.params`로 불러옵니다. params 로 들어올 `:변수`가 들어간 라우터는 일반 라우터보다 뒤에 위치해야 합니다.
+```js
+// /item/1
+app.get('/item/:id', (req, res) => {
+  console.log(req.params.id); // => 1
+});
+```
+- query string 부분은 `req.query`로 불러옵니다.
+```js
+// /item/1?q=abc&value=10
+app.get('/item/:id', (req, res) => {
+  console.log(req.query.q); // => 'abc'
+  console.log(req.query.value); // => '10'
+})
+```
+## 404 미들웨어
+요청에 일치하는 라우터가 없는 경우를 대비한 라우터를 생성합니다.
+```js
+app.use((req, res, next) => {
+  res.status(404).send('404 not found');
+})
+```
+## 라우터 그룹화
+```js
+router.get('/test', (req, res) => { 
+  res.send('get /abc');
+});
+router.post('/test', (req, res) => { 
+  res.send('post /abc');
+});
+```
+```js
+router.route('/test')
+  .get((req, res) => { 
+    res.send('get /abc');
+  })
+  .post((req, res) => { 
+    res.send('post /abc');
+  });
+```
+## req
+- `req.app` app 객체에 접근
+- `req.body` body-parser 미들웨어 body를 해석한 객체
+- `req.cookies` cookie-parser 미들웨어 cookie를 해석한 객체
+- `req.ip` 요청의 ip 주소
+- `req.params` 라우트 매개변수에 대한 객체
+- `req.query` 쿼리스트링 정보에 대한 객체
+- `req.signedCookies` 서명된 쿠키, req.cookies에 담기지 않음
+- `req.get(header)` header의 값을 가져오기 위한 메서드
+## res
+- `res.app` app 객체에 접근
+- `res.cookie(key, value, [option])` 쿠키를 설정하는 메서드
+- `res.clearCookie(key, value, [option])` 쿠키를 제거하는 메서드
+- `res.setHeader(header, value)` 응답 헤더 설정 [참고](../04_http_module_server/04_session.js)
+- `res.status(code)` HTTP 상태 코드를 지정
+### res 응답
+전체 요청에 대해 한번만 사용해야 함
+- `res.end()` 데이터 없이 응답을 보냄
+- `res.json(JSON)` JSON 형식 응답을 보냄
+- `res.redirect(link)` redirect 할 주소와 함께 응답을 보냄
+- `res.render(view, data)` 템플릿 엔진을 렌더링해 응답할 때 사용하는 메서드
+- `res.send(data)` 데이터와 함께 응답을 보냄. 문자열이나 HTML, buffer, Object, Array 등
+- `res.sendFile(path)` 경로에 위치한 파일을 응답
