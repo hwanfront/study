@@ -30,7 +30,7 @@ class Workspace extends Model {
   }
 
   static associate(db) {
-    db.Workspace.belongsTo(db.User, { as: "owner", foreignKey: "owner_id" });
+    db.Workspace.belongsTo(db.User, { as: "owner", foreignKey: "OwnerId" });
     db.Workspace.belongsToMany(db.User, { through: db.WorkspaceMember, as: "Members" });
     db.Workspace.hasMany(db.Revenue);
     db.Workspace.hasMany(db.Item);

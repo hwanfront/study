@@ -23,6 +23,9 @@ class User extends Model {
         type: DataTypes.STRING(30),
         allowNull: false,
         unique: true,
+        validate: {
+          isEmail: true,
+        }
       },
       password: {
         type: DataTypes.STRING(100),
@@ -45,7 +48,7 @@ class User extends Model {
   static associate(db) {
     // User(1):Comment(N) 관계에서 User.hasMany(Comment)
     // sourceKey 내 id
-    db.User.hasMany(db.Workspace, { as: "owner", foreignKey: "owner_id" }); 
+    db.User.hasMany(db.Workspace, { as: "owner", foreignKey: "OwnerId" }); 
     db.User.belongsToMany(db.Workspace, { through: db.WorkspaceMember, as: "Workspaces" })
   }
 }

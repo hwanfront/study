@@ -4,8 +4,12 @@ class Revenue extends Model {
   static init(sequelize) {
     return super.init({
       month: {
-        type: DataTypes.ENUM(1,2,3,4,5,6,7,8,9,10,11,12),
+        type: DataTypes.INTEGER,
         allowNull: false,
+        validate: {
+          min: 1,
+          max: 12,
+        }
       },
       company: {
         type: DataTypes.STRING(30),

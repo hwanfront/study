@@ -5,6 +5,10 @@ class RevenueDetail extends Model {
     return super.init({
       day: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 12,
+        }
       },
       comment: {
         type: DataTypes.TEXT,
