@@ -1,13 +1,15 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const session = require("express-session");
-const cookieParser = require("cookie-parser");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const hpp = require('hpp');
 const helmet = require('helmet');
+const passport = require('passport');
 
 const { sequelize } = require('./models');
+const passportConfig = require('./passport');
 const router = require('./routes');
 const userRouter = require('./routes/users')
 
@@ -22,6 +24,8 @@ sequelize.sync({ force: false })
   .catch((err) => {
     console.error(err);
   });
+
+passportConfig();
 
 const prod = process.env.NODE_ENV === "production";
 
@@ -56,6 +60,8 @@ if(prod) {
   sessionOption.cookie.proxy = true;
 }
 app.use(session(sessionOption));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // router
 app.use('/', router);

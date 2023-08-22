@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+</head>
+<body>
+  <div>
+    <a href="/register">register</a>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    window.addEventListener("load", async (event) => {
+      const $link = document.createElement('a');
+
+      const logout = async (event) => {
+        await axios.post('/api/user/logout');
+        $link.setAttribute('href', '/login');
+        $link.innerText = 'login';
+      }
+
+      try {
+        const isloggedin = await axios('/api/user/isloggedin');
+        $link.setAttribute('href', '#');
+        $link.addEventListener('click', logout);
+        $link.innerText = 'logout';
+      } catch(err) {
+        $link.setAttribute('href', '/login');
+        $link.removeEventListener('click', logout);
+        $link.innerText = 'login';
+      } finally {
+        document.querySelector('div').insertAdjacentElement("beforeend", $link);
+      }
+    })
+  </script>
+</body>
+</html>
