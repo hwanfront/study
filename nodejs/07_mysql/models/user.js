@@ -24,7 +24,9 @@ class User extends Model {
         allowNull: false,
         unique: true,
         validate: {
-          isEmail: true,
+          isEmail: {
+            msg: '이메일 형식이 올바르지 않습니다.'
+          },
         }
       },
       password: {

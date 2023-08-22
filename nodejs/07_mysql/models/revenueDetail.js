@@ -7,7 +7,7 @@ class RevenueDetail extends Model {
         type: DataTypes.INTEGER,
         validate: {
           min: 1,
-          max: 12,
+          max: 31,
         }
       },
       comment: {

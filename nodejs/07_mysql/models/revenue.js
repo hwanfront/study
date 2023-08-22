@@ -15,8 +15,18 @@ class Revenue extends Model {
         type: DataTypes.STRING(30),
       },
       amount: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT.UNSIGNED,
         allowNull: false,
+        validate: {
+          min: {
+            args: 0,
+            msg: '매출은 0원보다 커야합니다.'
+          },
+          max: {
+            args: 10_000_000_000_000,
+            mag: '매출은 10,000,000,000,000원보다 작아야합니다.'
+          }
+        }
       },
     }, {
       sequelize,
