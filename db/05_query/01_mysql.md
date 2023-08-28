@@ -19,6 +19,7 @@
 ### Datatype
 한 컬럼에는 같은 타입의 데이터가 들어가야 합니다
 - `INT` 정수
+  - `FLOAT` `DOUBLE` 실수
 - `VARCHAR` 문자열
 - `DATETIME` 날짜와 시간
 - `DATE` 날짜만
@@ -48,3 +49,6 @@
   - `CASCADE` 자식이 외래키로 참조하는 경우 같이 바꾸고 싶은 경우
   - `SET NULL` 자식이 참조하는 경우 바꾸는 경우 NULL로 변경
 - `CONSTRAINT` 제약조건
+### ERD 그리는 법
+- Database - Reverse Engineer
+- SHOW CREATE TABLE `table`.`column`
