@@ -4,10 +4,6 @@ class PriorityQueue {
     this.compare = compare;
   }
 
-  size() {
-    return this.heap.length;
-  }
-
   empty() {
     return this.heap.length === 0;
   }
@@ -16,59 +12,54 @@ class PriorityQueue {
     return this.heap[0];
   }
 
-  push(item) {
-    this.heap.push(item);
+  push(data) {
+    this.heap.push(data);
     this.heapifyUp();
   }
 
   heapifyUp() {
-    let currentIndex = this.heap.length - 1;
-    const currentItem = this.heap[currentIndex];
+    let ci = this.heap.length - 1;
+    const cd = this.heap[ci];
     
-    while (currentIndex > 0) {
-      const parentIndex = Math.floor((currentIndex - 1) / 2);
-      const parentItem = this.heap[parentIndex];
-      
-      if (this.compare(parentItem, currentItem)) break;
-
-      this.heap[currentIndex] = parentItem;
-      currentIndex = parentIndex;
+    while (ci > 0) {
+      const pi = Math.floor((ci - 1) / 2);
+      const pd = this.heap[pi];
+      if (this.compare(pd, cd)) break;
+      this.heap[ci] = pd;
+      ci = pi;
     }
 
-    this.heap[currentIndex] = currentItem;
+    this.heap[ci] = cd;
   }
 
   pop() {
     const last = this.heap.length - 1;
     this.heap[0] = this.heap[last];
-    this.heap.pop();
+    const data = this.heap.pop();
     
     if (this.heap.length > 0) {
       this.heapifyDown();
     }
+    return data;
   }
 
   heapifyDown() {
-    let currentIndex = 0;
-    const currentItem = this.heap[currentIndex];
+    let ci = 0;
+    const cd = this.heap[ci];
     
-    while (currentIndex < this.heap.length) {
-      const leftChildIndex = currentIndex * 2 + 1;
-      const rightChildIndex = currentIndex * 2 + 2;
-
-      if (leftChildIndex >= this.heap.length) break;
-
-      const leftChildItem = this.heap[leftChildIndex];
-      const rightChildItem = rightChildIndex < this.heap.length ? this.heap[rightChildIndex] : null;
-      const bestIndex = rightChildItem !== null && this.compare(rightChildItem, leftChildItem) ? rightChildIndex: leftChildIndex;
-      const bestItem = this.heap[bestIndex];
-      
-      if (this.compare(currentItem, bestItem)) break;
-
-      this.heap[currentIndex] = bestItem;
-      currentIndex = bestIndex;
+    while (ci < this.heap.length) {
+      const li = ci * 2 + 1;
+      const ri = ci * 2 + 2;
+      if (li >= this.heap.length) break;
+      const ld = this.heap[li];
+      const rd = ri < this.heap.length ? this.heap[ri] : null;
+      const bi = rd !== null && this.compare(rd, ld) ? ri: li;
+      const bd = this.heap[bi];
+      if (this.compare(cd, bd)) break;
+      this.heap[ci] = bd;
+      ci = bi;
     }
-    this.heap[currentIndex] = currentItem;
+    this.heap[ci] = cd;
   }
 }
 
