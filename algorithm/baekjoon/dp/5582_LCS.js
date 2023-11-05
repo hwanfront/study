@@ -1,3 +1,4 @@
+// Longest Common String 최장 공통 문자열
 // https://www.acmicpc.net/problem/5582
 // const fs = require("fs");
 // const input = fs.readFileSync("/dev/stdin").toString().trim();
