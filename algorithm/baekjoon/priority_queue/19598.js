@@ -1,3 +1,6 @@
+// https://www.acmicpc.net/problem/19598
+// const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+
 class PriorityQueue {
   constructor(compare) {
     this.heap = [];
@@ -63,4 +66,24 @@ class PriorityQueue {
   }
 }
 
-module.exports = PriorityQueue;
+const input = `3
+0 1
+1 2
+2 3`;
+const [N, ...data] = input.split`\n`;
+console.log(solution(+N, data.map(e => e.split` `.map(Number))));
+
+function solution(N, data) {
+  data.sort((a, b) => {
+    if(a[0] === b[0]) return a[1] - b[1];
+    return a[0] - b[0];
+  });
+  const pq = new PriorityQueue((a, b) => a < b);
+  for(const [s, e] of data) {
+    if(!pq.empty() && pq.top() <= s) {
+      pq.pop();
+    } 
+    pq.push(e);
+  }
+  return pq.heap.length;
+}

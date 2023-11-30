@@ -1,3 +1,6 @@
+// https://www.acmicpc.net/problem/
+// const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+
 class PriorityQueue {
   constructor(compare) {
     this.heap = [];
@@ -63,4 +66,42 @@ class PriorityQueue {
   }
 }
 
-module.exports = PriorityQueue;
+const input = `6 8
+4 5 3
+2 4 0
+4 1 4
+2 1 1
+5 6 1
+3 6 2
+3 2 6
+3 4 4`;
+const [NM, ...data] = input.split`\n`.map(e => e.split` `.map(Number));
+console.log(solution(NM, data));
+
+function solution([N, M], data) {
+  const graph = Array.from({length: N + 1}, () => []);
+  for(const [s, e, d] of data) {
+    graph[s].push([e, d]);
+    graph[e].push([s, d]);
+  }
+
+  const dijkstra = () => {
+    const pq = new PriorityQueue((p, c) => p[1] < c[1]);
+    const dist = Array(N + 1).fill(Number.MAX_SAFE_INTEGER);
+    dist[1] = 0;
+    pq.push([1, 0]);
+    while(!pq.empty()) {
+      const [node, d1] = pq.top();
+      if(node === N) return d1;
+      pq.pop();
+      for(const [nextNode, d2] of graph[node]) {
+        const nextDist = d1 + d2;
+        if(dist[nextNode] > nextDist) {
+          dist[nextNode] = nextDist;
+          pq.push([nextNode, nextDist]);
+        }
+      }
+    }
+  }
+  return dijkstra();
+}
